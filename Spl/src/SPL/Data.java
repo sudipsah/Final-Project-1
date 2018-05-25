@@ -9,7 +9,7 @@ public class Data {
 
 
 	public static void main(String args[]) throws IOException{
-		BufferedReader bufReader = new BufferedReader(new FileReader("/Users/sudipshah/Desktop/Spl/src/SPL/file.txt"));
+		BufferedReader bufReader = new BufferedReader(new FileReader("/Users/sudipshah/git/SPL-1/Spl/src/SPL/file.txt"));
 		String isbn1,isbn2;
 		ArrayList<String> listOfLines = new ArrayList<>(); 
 		String  line = bufReader.readLine();
@@ -21,7 +21,7 @@ public class Data {
 		ISBN1 value =new ISBN1();
 		value.Data1(isbn1);
 		ISBN2 value1 = new ISBN2();
-		//value1.Data1(isbn2);
+		value1.Data1(isbn2);
 		BetterWorldBooks h = new BetterWorldBooks();
 	//	h.Data2();
 	

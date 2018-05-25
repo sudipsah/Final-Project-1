@@ -171,8 +171,42 @@ public class ISBN1{
 					flag3=true;
 
 				}
+			
 
 				if(flag3==true) {
+					System.out.println("");
+
+				}
+		}
+
+		}
+		URL source4 = new URL("https://www.bookwire.com/book/AUS/Pride-and-Prejudice-"+str+"-Austen-Jane-16485274");
+		BufferedReader in4 = new BufferedReader(
+				new InputStreamReader(
+						source4.openStream()));
+		String inputLine4;	
+		boolean flag4=false;
+		int price4;
+		System.out.print("\nfrom bookwire.com\nPrice:$");
+		while ((inputLine4 = in4.readLine()) != null) {
+
+			price4=inputLine4.indexOf("priceSpan");
+
+			if(price4!=-1) {
+
+				char[] ch4=inputLine4.toCharArray();
+
+				for(int i=price4;i<ch4.length;i++) {
+
+					if(ch4[i]=='<'||ch4[i]=='/') break;
+					else if((ch4[i]>='0'&&ch4[i]<='9')||ch4[i]=='.')
+						System.out.print(ch4[i]);
+
+					flag4=true;
+
+				}
+
+				if(flag4==true) {
 					System.out.println("");
 
 				}
