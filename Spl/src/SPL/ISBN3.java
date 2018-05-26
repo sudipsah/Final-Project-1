@@ -5,16 +5,16 @@ import java.io.InputStreamReader;
 import java.net.URL;
 
 
-public class ISBN1{
+public class ISBN3{
 	public   void Data1(String str) throws IOException {
 
-		URL source = new URL("https://www.abebooks.com/servlet/SearchResults?n=100121501+100046078&pt=book&bi=s&pics=on&sortby=17&isbn="+str);
+		URL source = new URL("https://www.abebooks.com/servlet/SearchResults?ds=20&fe=on&kn="+str+"&sortby=17&cm_sp=pan-_-srp-_-allc");
 		BufferedReader in = new BufferedReader(
 				new InputStreamReader(
 						source.openStream()));
 		String inputLine;	
 		boolean flag=false;
-		int indexForTitle;
+		int indexForTitle,indexForAuthor;
 		int price;
 
 		System.out.print("Book's name:\n");	
@@ -22,30 +22,30 @@ public class ISBN1{
 
 			flag=false;
 
-			indexForTitle=inputLine.indexOf("title");
+			indexForTitle=inputLine.indexOf("The");
 
-			if(inputLine.indexOf("title")!=-1) {
+			if(inputLine.indexOf("The")!=-1) {
 
 				char[] ch=inputLine.toCharArray();
 
-				for(int i=indexForTitle+22;i<ch.length;i++) {
+				for(int i=indexForTitle;i<ch.length-134;i++) {
 
-					if(ch[i]==':'||ch[i]=='/'||ch[i]=='&') break;
+					if(ch[i]=='<'||ch[i]=='/'||ch[i]=='(') break;
 					System.out.print(ch[i]);
 
 					flag=true;
 
 				}
 				System.out.print("\nAuthor's name:\n");
-				indexForTitle=inputLine.indexOf("Aus");
+				indexForAuthor=inputLine.indexOf("Fra");
 
-				if(inputLine.indexOf("Aus")!=-1) {
+				if(indexForAuthor!=-1) {
 
 					char[] ch1=inputLine.toCharArray();
 
-					for(int i=indexForTitle-8;i<ch1.length;i++) {
+					for(int i=indexForAuthor;i<ch1.length-147;i++) {
 
-						if(ch1[i]=='<'||ch1[i]=='/'||ch1[i]==',') break;
+						if(ch1[i]=='>') break;
 						System.out.print(ch1[i]);
 
 						flag=true;
@@ -58,10 +58,11 @@ public class ISBN1{
 				if(flag==true) break;
 			}
 		}
+
 		System.out.print("\nfrom abe.com\nPrice:");
 		while ((inputLine = in.readLine()) != null) {
 
-			price=inputLine.indexOf("US$");
+			price=inputLine.indexOf("US$ 6");
 
 			if(price!=-1) {
 
@@ -82,7 +83,7 @@ public class ISBN1{
 			}
 		}
 
-		URL source1 = new URL("https://wordery.com/pride-and-prejudice-jane-austen-"+str);
+		URL source1 = new URL("https://wordery.com/the-apollo-guidance-computer-frank-obrien-"+str);
 		BufferedReader in1 = new BufferedReader(
 				new InputStreamReader(
 						source1.openStream()));
@@ -92,7 +93,7 @@ public class ISBN1{
 		System.out.print("\nfrom wordery.com\nPrice:$");
 		while ((inputLine1 = in1.readLine()) != null) {
 
-			price1=inputLine1.indexOf("u-fs--ex u-t--lh1");
+			price1=inputLine1.indexOf("u-fs--ex u-t--lh");
 
 			if(price1!=-1) {
 
@@ -100,8 +101,8 @@ public class ISBN1{
 
 				for(int i=price1;i<ch.length;i++) {
 
-					if(ch[i]=='/'||ch[i]=='<') break;
-					else if((ch[i]>='0'&&ch[i]<='9')||ch[i]=='.')
+					if(ch[i]=='<') break;
+					else if((ch[i]>='1'&&ch[i]<='9')||ch[i]=='.')
 						System.out.print(ch[i]);
 
 					flag1=true;
@@ -114,7 +115,7 @@ public class ISBN1{
 				}
 			}
 		}
-		URL source2 = new URL("https://www.chapters.indigo.ca/en-ca/books/pride-and-prejudice/"+str+"-item.html?ref=isbn-search");
+		URL source2 = new URL("https://www.chapters.indigo.ca/en-ca/books/the-apollo-guidance-computer-architecture/"+str+"-item.html?ref=isbn-search");
 		BufferedReader in2 = new BufferedReader(
 				new InputStreamReader(
 						source2.openStream()));
@@ -124,7 +125,7 @@ public class ISBN1{
 		System.out.print("\nfrom indigo.com\nPrice:$");
 		while ((inputLine2 = in2.readLine()) != null) {
 
-			price2=inputLine2.indexOf("price-normal");
+			price2=inputLine2.indexOf("$6");
 
 			if(price2!=-1) {
 
@@ -132,7 +133,7 @@ public class ISBN1{
 
 				for(int i=price2;i<ch.length;i++) {
 
-					if(ch[i]=='<'||ch[i]=='/') break;
+					if(ch[i]=='/') break;
 					else if((ch[i]>='0'&&ch[i]<='9')||ch[i]=='.')
 						System.out.print(ch[i]);
 
@@ -172,15 +173,13 @@ public class ISBN1{
 
 				}
 
-
 				if(flag3==true) {
 					System.out.println("");
 
 				}
 			}
-
 		}
-		URL source4 = new URL("https://www.bookwire.com/book/AUS/Pride-and-Prejudice-"+str+"-Austen-Jane-16485274");
+		URL source4 = new URL("https://www.bookwire.com/book/USA/The-Apollo-Guidance-Computer-"+str+"-OBrien-Frank-28689520");
 		BufferedReader in4 = new BufferedReader(
 				new InputStreamReader(
 						source4.openStream()));
@@ -213,9 +212,10 @@ public class ISBN1{
 			}
 
 		}
+
 	}
 
-
 }
+
 
 

@@ -58,7 +58,7 @@ public class ISBN2{
 				if(flag==true) break;
 			}
 		}
-		
+
 		System.out.print("\nfrom abe.com\nPrice:");
 		while ((inputLine = in.readLine()) != null) {
 
@@ -212,7 +212,7 @@ public class ISBN2{
 			}
 
 		}
-		
+
 	}
 
 }

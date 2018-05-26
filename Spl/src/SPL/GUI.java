@@ -15,15 +15,15 @@ import javax.swing.table.JTableHeader;
 public class GUI extends JFrame{
 	JTable table;
 	Abe object1 =new Abe();
-	
+
 	public GUI() {
 		setLayout(new FlowLayout());
 		String columnNames []= {"BooksName","Author","ISBN"};
 		Object data[][]= {{" "," "," "},
-				          {" "," ", " "},
-				          {" "," "," "},
-				           {" "," "," ",},
-				           {" "," "," "}};
+				{" "," ", " "},
+				{" "," "," "},
+				{" "," "," ",},
+				{" "," "," "}};
 		table =new JTable(data,columnNames);
 		table.setPreferredScrollableViewportSize(new Dimension(500,200));
 		table.setFillsViewportHeight(true);
@@ -31,13 +31,13 @@ public class GUI extends JFrame{
 		THead.setBackground(Color.BLUE);
 		JScrollPane scrollPane = new JScrollPane(table);
 		add(scrollPane);
-		
-		
-		
-		
-		
+
+
+
+
+
 	}
-	
+
 	URL source4 = new URL("https://studentvip.com.au/books/"+str);
 	BufferedReader in4 = new BufferedReader(
 			new InputStreamReader(
