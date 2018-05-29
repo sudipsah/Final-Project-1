@@ -20,7 +20,6 @@ public class Data {
 		isbn2=listOfLines.get(1);
 		isbn3=listOfLines.get(2);
 		isbn4=listOfLines.get(3);
-		
 
 		ISBN1 value =new ISBN1();
 		value.Data1(isbn1);
@@ -30,13 +29,6 @@ public class Data {
 		value2.Data1(isbn3);
 		ISBN4 value3 = new ISBN4();
 		value3.Data1(isbn4);
-	
-
-
-
-
-
-
 	}
 }
 

@@ -16,7 +16,7 @@ public class ISBN3{
 		boolean flag=false;
 		int indexForTitle,indexForAuthor;
 		int price;
-
+		System.out.print("ISBN number"+str+"\n");	
 		System.out.print("Book's name:\n");	
 		while ((inputLine = in.readLine()) != null) {
 
