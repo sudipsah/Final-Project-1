@@ -156,7 +156,7 @@ public class ISBN1{
 		System.out.print("\nfrom powells.com\nPrice:$");
 		while ((inputLine3 = in3.readLine()) != null) {
 
-			price3=inputLine3.indexOf("disc-price");
+			price3=inputLine3.indexOf("price");
 
 			if(price3!=-1) {
 

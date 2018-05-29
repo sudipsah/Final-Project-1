@@ -125,7 +125,7 @@ public class ISBN2{
 		System.out.print("\nfrom indigo.com\nPrice:$");
 		while ((inputLine2 = in2.readLine()) != null) {
 
-			price2=inputLine2.indexOf("price-normal");
+			price2=inputLine2.indexOf("price");
 
 			if(price2!=-1) {
 
@@ -147,7 +147,7 @@ public class ISBN2{
 				}
 			}
 		}
-		URL source3 = new URL("http://www.powells.com/searchresults?keyword="+str);
+		URL source3 = new URL("http://www.powells.com/book/-"+str);
 		BufferedReader in3 = new BufferedReader(
 				new InputStreamReader(
 						source3.openStream()));
@@ -157,7 +157,7 @@ public class ISBN2{
 		System.out.print("\nfrom powells.com\nPrice:$");
 		while ((inputLine3 = in3.readLine()) != null) {
 
-			price3=inputLine3.indexOf("disc-price");
+			price3=inputLine3.indexOf("$6");
 
 			if(price3!=-1) {
 

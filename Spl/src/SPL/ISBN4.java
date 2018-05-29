@@ -8,7 +8,7 @@ import java.net.URL;
 public class ISBN4{
 	public   void Data1(String str) throws IOException {
 
-		URL source = new URL("https://www.abebooks.com/servlet/SearchResults?fe=on&kn="+str+"&sortby=17&cm_sp=pan-_-srp-_-fe");
+		URL source = new URL("https://www.abebooks.com/servlet/BookDetailsPL?bi=22106605560&searchurl=isbn%3D"+str+"%26sortby%3D17&cm_sp=snippet-_-srp1-_-title3");
 		BufferedReader in = new BufferedReader(
 				new InputStreamReader(
 						source.openStream()));
@@ -22,30 +22,30 @@ public class ISBN4{
 
 			flag=false;
 
-			indexForTitle=inputLine.indexOf("Pixel");
+			indexForTitle=inputLine.indexOf("title");
 
 			if(indexForTitle!=-1) {
 
 				char[] ch=inputLine.toCharArray();
 
-				for(int i=indexForTitle;i<ch.length;i++) {
+				for(int i=indexForTitle+6;i<ch.length;i++) {
 
-					if(ch[i]=='<'||ch[i]=='/'||ch[i]=='b') break;
+					if(ch[i]=='<'||ch[i]=='/'||ch[i]=='(') break;
 					System.out.print(ch[i]);
 
 					flag=true;
 
 				}
 				System.out.print("\nAuthor's name:\n");
-				indexForTitle=inputLine.indexOf("Dan");
+				indexForTitle=inputLine.indexOf("Daniel");
 
 				if(indexForTitle!=-1) {
 
 					char[] ch1=inputLine.toCharArray();
 
-					for(int i=indexForTitle;i<ch1.length-134;i++) {
+					for(int i=indexForTitle;i<ch1.length;i++) {
 
-						if(ch1[i]=='<') break;
+						if(ch1[i]==':') break;
 						System.out.print(ch1[i]);
 
 						flag=true;
