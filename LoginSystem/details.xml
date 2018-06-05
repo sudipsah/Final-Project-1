@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Information>
+            
+   
+   
+   
+   <Account>
+                        
+      
+      
+      <userName>sudip</userName>
+                        
+      
+      
+      <Email>sudip@gmail.com</Email>
+                        
+      
+      
+      <password>abcd12345</password>
+                        
+      
+      
+      <gender>Male</gender>
+                        
+      
+      
+      <dateOfBirth>3/Mar/2015</dateOfBirth>
+                     
+   
+   
+   </Account>
+         
+   
+   
+   <Account>
+                  
+      
+      <userName>sudip</userName>
+                  
+      
+      <Email>sudip@gmail.com</Email>
+                  
+      
+      <password>abcd12345</password>
+                  
+      
+      <gender>Male</gender>
+                  
+      
+      <dateOfBirth>3/Mar/2015</dateOfBirth>
+               
+   
+   </Account>
+      
+   
+   <Account>
+            
+      <userName>tawhid</userName>
+            
+      <Email>tawhid@gmail.com</Email>
+            
+      <password>Hello12345</password>
+            
+      <gender>Male</gender>
+            
+      <dateOfBirth>3/Jan/2017</dateOfBirth>
+         
+   </Account>
+   
+   <Account>
+      <userName>hello</userName>
+      <Email>bsse0934@iit.du.ac.bd</Email>
+      <password>bsse12345</password>
+      <gender>Male</gender>
+      <dateOfBirth>6/Jul/2012</dateOfBirth>
+   </Account>
+</Information>
